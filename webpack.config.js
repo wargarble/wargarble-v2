@@ -1,6 +1,9 @@
+const reactDOMServer = require("react-dom/server");
 const path = require("path");
 const webpack = require("webpack");
 const prod = JSON.parse(process.env.PROD_DEV || "0");
+
+console.log(reactDOMServer.renderToString(app));
 
 module.exports = {
   context: __dirname,
