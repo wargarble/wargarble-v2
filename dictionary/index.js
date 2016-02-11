@@ -1,4 +1,4 @@
 module.exports = {
 	title: "Wargarble",
-	description: "Wargarble is music.",
+	description: "Wargarble is music.", // Is it?
 };
