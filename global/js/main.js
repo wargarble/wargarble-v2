@@ -4,7 +4,7 @@ if (module.hot) {
 
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "App";
+import App from "containers/App";
 
 // TODO: figure out a good way to manage this shit.
 require("../css/main.less");
