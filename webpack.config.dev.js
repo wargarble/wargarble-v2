@@ -13,32 +13,40 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '_dist/js'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './index.html'
-    })
+    }),
   ],
   module: {
     loaders: [
       {
         test: /\.less$/,
-        loaders: ['style', 'css', 'less']
+        loaders: ['style', 'css', 'less'],
       },
       {
         test: /\.js?$|\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
+          presets: ['react', 'es2015'],
+        },
+      },
+    ],
   },
   devServer: {
     contentBase: './dist',
-    hot: true
-  }
+    hot: true,
+  },
+	resolve: {
+		extensions: ["", ".webpack.js", ".web.js", ".js", ".jsx"],
+	  root: [
+			path.join(__dirname, "./global"),
+			path.join(__dirname, "./containers"),
+			path.join(__dirname, "./components"),
+		],
+	},
 }
