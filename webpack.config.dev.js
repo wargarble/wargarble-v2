@@ -1,10 +1,14 @@
 // webpack.config.dev.js
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const _ = {};
+_.extend = require('lodash/fp/extend');
 
-module.exports = {
-  context: __dirname,
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const config = require('./webpack.config');
+const extend =
+
+module.exports = _.extend(config, {
   devtool: 'cheap-eval-source-map',
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
@@ -21,32 +25,8 @@ module.exports = {
       template: './index.html'
     }),
   ],
-  module: {
-    loaders: [
-      {
-        test: /\.less$/,
-        loaders: ['style', 'css', 'less'],
-      },
-      {
-        test: /\.js?$|\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015'],
-        },
-      },
-    ],
-  },
   devServer: {
     contentBase: './dist',
     hot: true,
   },
-	resolve: {
-		extensions: ["", ".webpack.js", ".web.js", ".js", ".jsx"],
-	  root: [
-			path.join(__dirname, "./global"),
-			path.join(__dirname, "./containers"),
-			path.join(__dirname, "./components"),
-		],
-	},
-}
+});

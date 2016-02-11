@@ -1,23 +1,34 @@
-const path = require("path");
-const webpack = require("webpack");
-const prod = JSON.parse(process.env.PROD_DEV || "0");
+// webpack.config.js
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: __dirname,
-	entry: {
-		main: "./global/js/main",
-	},
-	exclude: /(node_modules|bower_components)/,
-	loader: 'babel',
-	output: {
-		path: path.join(__dirname, "_dist"),
-		filename: prod ? "js/[name].min.js" : "js/[name].js",
-	},
-	plugins: prod ? [
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
-  ] : [],
-	query: {
-		presets: ['react', 'es2015']
-	},
-	test: /\.js?$|\.jsx?$/,
-};
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ],
+  module: {
+    loaders: [
+      {
+        test: /\.less$/,
+        loaders: ['style', 'css', 'less']
+      },
+      {
+        test: /\.js?$|\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }
+    ]
+  },
+  resolve: {
+    extensions: ["", ".webpack.js", ".web.js", ".js", ".jsx"],
+    root: [ __dirname ],
+  },
+}

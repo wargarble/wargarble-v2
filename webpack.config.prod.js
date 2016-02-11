@@ -1,10 +1,14 @@
 // webpack.config.prod.js
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const _ = {};
+_.extend = require('lodash/fp/extend');
 
-module.exports = {
-  context: __dirname,
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const config = require('./webpack.config');
+const extend = require('lodash/fp/extend');
+
+module.exports = _.extend(config, {
   devtool: 'source-map',
   entry: ['./global/js/main',],
   output: {
@@ -22,20 +26,4 @@ module.exports = {
       template: './index.html'
     })
   ],
-  module: {
-    loaders: [
-      {
-        test: /\.less$/,
-        loaders: ['style', 'css', 'less']
-      },
-      {
-        test: /\.js?$|\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ]
-  }
-}
+});
