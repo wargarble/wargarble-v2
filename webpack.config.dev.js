@@ -10,8 +10,8 @@ const config = require('./webpack.config');
 module.exports = _.extend(config, {
   devtool: 'cheap-eval-source-map',
   output: {
-    path: path.join(__dirname, '_dist/js'),
-    filename: '[name].js',
+    path: path.join(__dirname, '_dist'),
+    filename: 'js/[name].js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

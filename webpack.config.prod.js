@@ -12,8 +12,8 @@ module.exports = _.extend(config, {
   devtool: 'source-map',
   entry: entry,
   output: {
-    path: path.join(__dirname, '_dist/js'),
-    filename: '[name].min.js'
+    path: path.join(__dirname, '_dist'),
+    filename: 'js/[name].min.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
