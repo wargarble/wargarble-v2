@@ -12,6 +12,13 @@ module.exports = {
     })
   ],
   module: {
+		preLoaders: [
+			{
+        test: /\.jsx$|\.js$/,
+        loader: 'eslint-loader',
+        exclude: /\_dist/
+      },
+		],
     loaders: [
       {
         test: /\.less$/,
