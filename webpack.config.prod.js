@@ -6,13 +6,14 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.config');
+const entry = require('./webpack.manifest');
 
 module.exports = _.extend(config, {
   devtool: 'source-map',
-  entry: ['./global/js/main',],
+  entry: entry,
   output: {
     path: path.join(__dirname, '_dist/js'),
-    filename: 'bundle.min.js'
+    filename: '[name].min.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({

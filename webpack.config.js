@@ -2,9 +2,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const entry = require("./webpack.manifest");
 
 module.exports = {
   context: __dirname,
+	entry: entry,
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({

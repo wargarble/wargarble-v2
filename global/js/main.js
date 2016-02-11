@@ -11,8 +11,7 @@ require('../css/main.less');
 
 const Wargarble = {
   init() {
-    const mountNode = document.getElementById('wargarble');
-    ReactDOM.render(<App />, mountNode);
+    ReactDOM.render(<App />, document.getElementById('wargarble'));
   },
 };
 

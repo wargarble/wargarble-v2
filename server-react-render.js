@@ -7,6 +7,8 @@ const app = React.createElement(require("./containers/App").default);
 const fs = require("fs");
 const reactDOMServer = require("react-dom/server");
 const path = require("path");
+const indexSource = path.join(__dirname, "index.html");
+const indexDist = path.join(__dirname, "index.html");
 
 fs.readFile(path.join(__dirname, "index.html"), "utf8", (err, html) => {
 	if (err) {
@@ -23,5 +25,5 @@ fs.readFile(path.join(__dirname, "index.html"), "utf8", (err, html) => {
 		`
 	);
 
-	console.log(html);
+	fs.writeFile(indexDist, html);
 });
