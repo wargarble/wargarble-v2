@@ -1,3 +1,44 @@
 body {
-  background-color: red;
+  background-color: #000;
+	color: #f8f8f8;
+	font-family: "Montserrat";
+  padding-bottom: 100px;
+}
+
+.u {
+  &-container {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  &-header {
+    padding: 50px;
+    text-align: center;
+  }
+
+  &-logo {
+    cursor: default;
+    -webkit-user-select: none;
+  }
+
+  &-logo img,
+  &-logo h1 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &-logo img {
+    margin: 0 10px 3px;
+    max-width: 50px;
+  }
+
+  &-logo-right-image {
+    transform: rotatey(180deg);
+  }
+
+  &-logo h1 {
+    font-size: 20px;
+    margin: 0;
+    text-transform: uppercase;
+  }
 }

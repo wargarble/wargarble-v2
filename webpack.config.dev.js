@@ -11,6 +11,7 @@ module.exports = _.extend(config, {
   devtool: 'cheap-eval-source-map',
   output: {
     path: path.join(__dirname, '_dist'),
+    publicPath: '/',
     filename: 'js/[name].js',
   },
   plugins: [
@@ -20,7 +21,7 @@ module.exports = _.extend(config, {
     }),
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './_dist',
     hot: true,
   },
 });

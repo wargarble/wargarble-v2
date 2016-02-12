@@ -1,0 +1,27 @@
+.album {
+  margin: 0 auto;
+  max-width: 600px;
+
+  &-title {
+    cursor: default;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  &-tracks {
+    list-style: none;
+    padding: 0;
+  }
+
+  &-track {
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.6;
+    padding: 4px 0;
+    transition: opacity 200ms ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
