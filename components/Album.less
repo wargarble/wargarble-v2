@@ -1,10 +1,20 @@
+@import "../global/css/colors";
+
 .album {
-  margin: 0 auto;
-  max-width: 600px;
+  &-cover {
+    float: left;
+    margin: 0;
+    width: 50%;
+  }
+
+  &-info {
+    float: right;
+    padding-left: 20px;
+    width: 50%;
+  }
 
   &-title {
     cursor: default;
-    font-size: 16px;
     margin: 0;
   }
 
@@ -14,14 +24,13 @@
   }
 
   &-track {
+    color: @midGray;
     cursor: pointer;
-    font-size: 14px;
-    opacity: 0.6;
     padding: 4px 0;
-    transition: opacity 200ms ease;
+    transition: color 200ms ease;
 
     &:hover {
-      opacity: 0.9;
+      color: @lightGray;
     }
   }
 }

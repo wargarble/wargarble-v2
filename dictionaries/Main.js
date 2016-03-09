@@ -7,6 +7,7 @@ const Dictionary = {
   albums: [
     {
       title: 'Discipline',
+      cover: 'assets/discipline.jpg',
       tracks: [
         {
           title: 'Roberta',

@@ -1,3 +1,5 @@
+require('./Header.less');
+
 import Logo from 'components/Logo';
 import React, { Component } from 'react';
 
@@ -8,7 +10,7 @@ class Header extends Component {
 
   render() {
     return (
-      <header className="u-header">
+      <header className="header">
         <Logo {...this.props} />
       </header>
     );

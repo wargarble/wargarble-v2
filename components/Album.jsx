@@ -9,17 +9,23 @@ class Album extends Component {
 
   render() {
     return (
-      <section className="album">
-        <h1 className="album-title">{this.props.title}</h1>
-        <ul className="album-tracks">
-          {this.props.tracks.map((track) => <li className="album-track">{track.title}</li>)}
-        </ul>
+      <section className="album u-inner u-cf">
+        <figure className="album-cover">
+          <img src={this.props.cover} />
+        </figure>
+        <div className="album-info">
+          <h1 className="album-title">{this.props.title}</h1>
+          <ul className="album-tracks">
+            {this.props.tracks.map((track) => <li className="album-track">{track.title}</li>)}
+          </ul>
+        </div>
       </section>
     );
   }
 }
 
 Album.propTypes = {
+  cover: PropTypes.string,
   title: PropTypes.string,
   tracks: PropTypes.array,
 };

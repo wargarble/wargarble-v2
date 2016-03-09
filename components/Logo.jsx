@@ -1,3 +1,5 @@
+require('./Logo.less');
+
 import React, { Component, PropTypes } from 'react';
 
 class Logo extends Component {
@@ -7,11 +9,10 @@ class Logo extends Component {
 
   render() {
     return (
-      <span className="u-logo">
-        <img src={this.props.logo} className="u-logo-left-image" />
+      <span className="logo">
+        <img src={this.props.logo} className="logo-left-image" />
         <h1>{this.props.title}</h1>
-        <img src={this.props.logo} className="u-logo-right-image" />
-        <p className="u-description">{this.props.description}</p>
+        <img src={this.props.logo} className="logo-right-image" />
       </span>
     );
   }
