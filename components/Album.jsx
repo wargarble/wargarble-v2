@@ -16,7 +16,10 @@ class Album extends Component {
         <div className="album-info">
           <h1 className="album-title">{this.props.title}</h1>
           <ul className="album-tracks">
-            {this.props.tracks.map((track) => <li className="album-track">{track.title}</li>)}
+            {this.props.tracks.map((track, index) => {
+              const title = track.title;
+              return <li className="album-track" key={index}>{title}</li>;
+            })}
           </ul>
         </div>
       </section>

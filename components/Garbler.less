@@ -1,0 +1,36 @@
+@keyframs spin {
+	from { transform: rotateX(0deg); }
+	to   { transform: rotateX(180deg); }
+}
+
+.garbler {
+	background-color: #383838;
+	bottom: 0;
+	left: 0;
+	padding: 5px 30px;
+	position: fixed;
+	width: 100%;
+
+	// transform: translatey(100%);
+	// &.is-visible {
+	// 	transform: translatey(0);
+	// }
+
+	// Hide the audio tracks. We're going to make our own visualizations.
+	audio {
+		display: none;
+	}
+
+	&-toggle-play {
+		background-size: 0;
+		cursor: pointer;
+		height: 40px;
+		width: 40px;
+
+		&:hover,
+		&.is-playing {
+			background-size: cover;
+			animation: spin 3s infinite;
+		}
+	}
+}
