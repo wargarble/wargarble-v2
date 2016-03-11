@@ -1,8 +1,7 @@
-// webpack.config.js
+const entry = require("./webpack.manifest");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const entry = require("./webpack.manifest");
 
 module.exports = {
   context: __dirname,

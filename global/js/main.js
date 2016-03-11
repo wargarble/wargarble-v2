@@ -1,13 +1,18 @@
+/**
+ * @file The main thread web shit.
+ * @author foley
+ */
+
 if (module.hot) {
   module.hot.accept();
 }
 
+// TODO: figure out a good way to manage this shit.
+require('../css/main.less');
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from 'containers/App';
-
-// TODO: figure out a good way to manage this shit.
-require('../css/main.less');
 
 const Wargarble = {
   init() {

@@ -32,7 +32,17 @@ class Header extends Component {
               autoplay = true;
             }
 
-            return <audio key={index} controls="false" loop="false" src={url} autoPlay={autoplay}></audio>;
+            return (
+              <audio key={index}
+                controls="false"
+                loop="false"
+                mediaset="garbler"
+                controls="false"
+                loop="false"
+                src={url}
+                autoPlay={autoplay}
+              ></audio>
+            );
           })}
         </div>
       </div>

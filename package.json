@@ -52,7 +52,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
-    "build": "node server-react-render && webpack --config webpack.config.prod.js",
-    "dev": "webpack-dev-server --watch --config webpack.config.dev.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --watch --config webpack.config.dev.js",
+		"prerender": "NODE_PATH=$NODE_PATH:./ node server-react-render"
   }
 }

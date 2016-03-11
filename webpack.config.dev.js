@@ -1,11 +1,8 @@
-// webpack.config.dev.js
-const _ = {};
-_.extend = require('lodash/fp/extend');
-
+const _ = require('lodash/core');
+const config = require('./webpack.config');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const config = require('./webpack.config');
 
 module.exports = _.extend(config, {
   devtool: 'cheap-eval-source-map',
